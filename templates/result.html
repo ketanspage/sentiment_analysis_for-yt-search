@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Results</title>
+  </head>
+  <body>
+    <h1>Results</h1>
+    {% for video in video_data %}
+    <h2>{{ video.title }}</h2>
+    <p>Description: {{ video.description }}</p>
+    <p>Date and Time: {{ video.date_time }}</p>
+    <p>Timestamp: {{ video.timestamp }}</p>
+    <p>Channel Title: {{ video.channel_title }}</p>
+    <p>Sentiment Analysis:</p>
+    <ul>
+      {% for sentiment in video.sentiment_analysis %}
+      <li>{{ sentiment.label }} - {{ sentiment.score }}</li>
+      {% endfor %}
+    </ul>
+    {% endfor %}
+  </body>
+</html>
